@@ -1,18 +1,13 @@
-module.exports = function(grunt) {
-  
-  grunt.initConfig({
+'use strict';
 
-  	// Configuração de Minificação - Origem/Destino  	
-  	uglify: {
-        'public/js/javascript.js': 'public/js/javascript.js'
-     }
+module.exports = function (grunt) {
 
-  });
+    // Lê os arquivos do diretório 'tasks'
+    require('grunt-config-dir')(grunt, {
+        configDir: require('path').resolve('tasks')
+    });
 
-  // Plugin de Minificação
-  grunt.loadNpmTasks('grunt-contrib-uglify')
-
-  // Task de Minificação
-  grunt.registerTask('minificar', ['uglify']);
-
+	// Registra as Tasks
+	grunt.registerTask('build', [ 'uglify' ]);  	
+    
 };
