@@ -4,7 +4,7 @@
 	var app = express();		
 	var mongoose = require('mongoose');
 	var port = process.env.PORT || 8080;
-	var database = require('./config/database');
+	var database = require('./config/mongodb');
 
 	// Conexão com o MongoDB	
 	mongoose.connect(database.url);
