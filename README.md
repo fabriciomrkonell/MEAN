@@ -1,4 +1,4 @@
 MEAN
 ====
 
-Mongo + Express + Angular + Node.
+Projeto com Mongo + Express + Angular + Node
