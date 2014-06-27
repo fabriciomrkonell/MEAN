@@ -1,21 +1,22 @@
-	var express = require('express'),
+'use strict';
+
+var express = require('express'),
 		
 		// Novo aplicativo com express	
 		app = express(),
-		
+			
 		// Mongoose para o MongoDB
 		mongoose = require('mongoose'),
 
 		// Configuração da porta
 		port = process.env.PORT || 8080,
 
-		// Configuraçãos do Banco de Dados
+		// Configurações do Banco de Dados
 		database = require('./config/database');
 
-	// Conexão com o MongoDB	
-	mongoose.connect(database.url);
-
-	// Configurações
+		// Conexão com o MongoDB	
+		mongoose.connect(database.url);
+	
 	app.configure(function() {
 
 		// Diretório
@@ -29,7 +30,7 @@
 
 		// Simulador de DELETE e PUT
 		app.use(express.methodOverride());
-		
+
 	});
 
 	// Definição das rotas
