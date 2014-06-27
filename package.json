@@ -1,0 +1,11 @@
+{
+  "name"         : "MEAN",
+  "version"      : "0.0.0",
+  "description"  : "MongoDB + Express + Angular + Node",
+  "main"         : "server.js",
+  "author"       : "Fabrício Ronchi",
+  "dependencies" : {
+    "express"    : "~3.4.4",
+    "mongoose"   : "~3.6.2"
+  }
+}
