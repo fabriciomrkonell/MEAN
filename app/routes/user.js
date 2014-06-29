@@ -38,6 +38,18 @@ module.exports = function(app) {
 		});
 	});
 
+	// Update
+	app.post('/user/:_id', function(req, res) {
+		User.update({
+			name : req.body.name,
+		}, function(err, data) {
+			if (err) {
+				res.json({ 'result': false });
+			}
+			res.json({ 'result': true });
+		});
+	});
+
 	// Delete
 	app.delete('/user/:_id', function(req, res) {
 		User.remove({

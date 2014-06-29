@@ -9,7 +9,11 @@ angular.module('userService', []).factory('User', function($http) {
 			return $http.get('/user/' + id);
 		},
 		create : function(data) {
-			return $http.post('/user', data);
+			if(data._id){
+				return $http.post('/user/' + data._id, data);
+			}else{
+				return $http.post('/user', data);
+			}
 		},
 		delete : function(id) {
 			return $http.delete('/user/' + id);
