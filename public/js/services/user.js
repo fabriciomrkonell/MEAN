@@ -5,8 +5,8 @@ angular.module('userService', []).factory('User', function($http) {
 		get : function() {
 			return $http.get('/user');
 		},
-		create : function(todoData) {
-			return $http.post('/user', todoData);
+		create : function(data) {
+			return $http.post('/user', data);
 		},
 		delete : function(id) {
 			return $http.delete('/user/' + id);

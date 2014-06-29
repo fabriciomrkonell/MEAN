@@ -1,16 +1,18 @@
 'use strict';
 
-angular.module('todoController', []).controller('mainController', function($scope, $http, User) {
+angular.module('userApp', []).controller('userController', function($scope, $http, User) {
 
-	$scope.formData = {};
-	$scope.loading = true;
-
-	User.get().success(function(data) {
-		$scope.todos = data;
-		$scope.loading = false;
+	angular.extend($scope, {
+		users: []
 	});
 
-	$scope.createTodo = function() {
+	User.get().success(function(data) {
+		angular.extend($scope, {
+			users: data
+		});
+	});
+
+	$scope.create= function() {
 		$scope.loading = true;
 		if ($scope.formData.text != undefined) {
 			User.create($scope.formData).success(function(data) {
@@ -21,11 +23,9 @@ angular.module('todoController', []).controller('mainController', function($scop
 		}
 	};
 
-	$scope.deleteTodo = function(id) {
-		$scope.loading = true;
+	$scope.delete = function(id, index) {
 		User.delete(id).success(function(data) {
-			$scope.loading = false;
-			$scope.todos = data;
+			$scope.users.splice(index, 1);
 		});
 	};
 

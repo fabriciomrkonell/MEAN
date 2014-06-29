@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="title-header">
+      <h3>Usuários</h3>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="expressao" placeholder="Expressão de consulta">
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="form-group">
+      <button type="buttom" class="btn btn-success">Novo Usuário</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-bordered table-condensed">
+      <thead>
+        <tr>
+          <th style="width: 100px" class="text-center">Código</th>
+          <th>Nome</th>
+          <th style="width: 150px" class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users | filter:expressao">
+          <td style="width: 100px" class="text-center">{{$index + 1}}</td>
+          <td>{{user.name}}</td>
+          <td style="width: 150px" class="text-center">
+            <button class="btn btn-xs btn-primary"ng-click="delete(user._id)">Editar</button>
+            <button class="btn btn-xs btn-danger"ng-click="delete(user._id, $index)">Excluir</button>
+          </td>
+        </tr>
+        <tr ng-show="users.length == 0">
+          <td colspan="3" class="text-center">Nenhum usuário encontrado!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

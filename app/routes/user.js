@@ -38,9 +38,4 @@ module.exports = function(app) {
 		});
 	});
 
-	// Aplicação
-	app.get('*', function(req, res) {
-		res.sendfile('./public/index.html');
-	});
-
 };
