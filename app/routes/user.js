@@ -14,6 +14,18 @@ module.exports = function(app) {
 		});
 	});
 
+	// GetById
+	app.get('/user/:_id', function(req, res) {
+		User.find({
+			_id : req.params._id,
+		}, function(err, data) {
+			if (err) {
+				res.send(err);
+			}
+			res.json(data.shift());
+		});
+	});
+
 	// Create
 	app.post('/user', function(req, res) {
 		User.create({
@@ -27,9 +39,9 @@ module.exports = function(app) {
 	});
 
 	// Delete
-	app.delete('/user/:todo_id', function(req, res) {
+	app.delete('/user/:_id', function(req, res) {
 		User.remove({
-			_id : req.params.todo_id
+			_id : req.params._id
 		}, function(err, data) {
 			if (err) {
 				res.json({ 'result': false });

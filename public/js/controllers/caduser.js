@@ -1,9 +1,18 @@
 'use strict';
 
-angular.module('cadUserApp', []).controller('cadUserController', function($scope, $window, User) {
+angular.module('cadUserApp', []).controller('cadUserController', function($scope, $window, User, $routeParams) {
+
+	if($routeParams._id){
+		User.getById($routeParams._id).success(function(data) {
+			angular.extend($scope, {
+				user: data
+			});
+		});
+	};
 
 	angular.extend($scope, {
 		user: {
+			_id: '',
 			name: []
 		}
 	});

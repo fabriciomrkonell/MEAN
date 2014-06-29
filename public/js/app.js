@@ -14,6 +14,10 @@ angular.module('app', ['conUserApp', 'cadUserApp', 'userService', 'ngRoute'])
         templateUrl: 'view/caduser.html',
         controller: 'cadUserController'
       }).
+      when('/CadUser/:_id', {
+        templateUrl: 'view/caduser.html',
+        controller: 'cadUserController'
+      }).
       otherwise({
         redirectTo: '/Home'
     });

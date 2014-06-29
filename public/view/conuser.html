@@ -13,7 +13,7 @@
   </div>
   <div class="col-sm-8">
     <div class="form-group">
-      <a type="buttom" class="btn btn-success" href="#CadUser">Novo Usuário</a>
+      <a type="buttom" class="btn btn-success" ng-href="#CadUser">Novo Usuário</a>
     </div>
   </div>
 </div>
@@ -32,8 +32,8 @@
           <td style="width: 100px" class="text-center">{{$index + 1}}</td>
           <td>{{user.name}}</td>
           <td style="width: 150px" class="text-center">
-            <button class="btn btn-xs btn-primary"ng-click="delete(user._id)">Editar</button>
-            <button class="btn btn-xs btn-danger"ng-click="delete(user._id, $index)">Excluir</button>
+            <a class="btn btn-xs btn-primary" ng-href="#CadUser/{{user._id}}">Editar</a>
+            <a class="btn btn-xs btn-danger" ng-click="delete(user._id, $index)">Excluir</a>
           </td>
         </tr>
         <tr ng-show="users.length == 0">

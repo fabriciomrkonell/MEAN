@@ -6,7 +6,7 @@ angular.module('conUserApp', []).controller('conUserController', function($scope
 		users: []
 	});
 
-	User.get().success(function(data) {
+	User.getAll().success(function(data) {
 		angular.extend($scope, {
 			users: data
 		});

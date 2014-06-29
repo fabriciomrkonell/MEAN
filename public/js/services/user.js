@@ -2,8 +2,11 @@
 
 angular.module('userService', []).factory('User', function($http) {
 	return {
-		get : function() {
+		getAll : function() {
 			return $http.get('/user');
+		},
+		getById : function(id) {
+			return $http.get('/user/' + id);
 		},
 		create : function(data) {
 			return $http.post('/user', data);
