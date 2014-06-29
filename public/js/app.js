@@ -6,9 +6,13 @@ angular.module('app', ['userApp', 'userService', 'ngRoute'])
       when('/Home', {
         templateUrl: 'view/home.html',
       }).
-      when('/User', {
+      when('/ConUser', {
         templateUrl: 'view/conuser.html',
-        controller: 'userController'
+        controller: 'conUserController'
+      }).
+      when('/CadUser', {
+        templateUrl: 'view/caduser.html',
+        controller: 'cadUserController'
       }).
       otherwise({
         redirectTo: '/Home'

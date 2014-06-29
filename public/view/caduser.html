@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="title-header">
+      <h3>Cadastro de Usuários</h3>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" class="form-control" ng-model="user.name" placeholder="Nome do usuário">
+  </div>
+  <button type="button" class="btn btn-success" ng-click="salvarUser()" ng-disabled="user.nome == ''">Salvar</button>
+</div>

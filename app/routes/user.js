@@ -17,12 +17,12 @@ module.exports = function(app) {
 	// Create
 	app.post('/user', function(req, res) {
 		User.create({
-			name : req.body.text,
+			name : req.body.name,
 		}, function(err, data) {
 			if (err) {
-				res.send(err);
+				res.json({ 'result': false });
 			}
-			res.json({ 'result': 1 });
+			res.json({ 'result': true });
 		});
 	});
 
@@ -32,9 +32,9 @@ module.exports = function(app) {
 			_id : req.params.todo_id
 		}, function(err, data) {
 			if (err) {
-				res.send(err);
+				res.json({ 'result': false });
 			}
-			res.json({ 'result': 1 });
+			res.json({ 'result': true });
 		});
 	});
 

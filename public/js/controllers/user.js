@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('userApp', []).controller('userController', function($scope, $http, User) {
+angular.module('userApp', [])
+.controller('conUserController', function($scope, User) {
 
 	angular.extend($scope, {
 		users: []
@@ -12,21 +13,28 @@ angular.module('userApp', []).controller('userController', function($scope, $htt
 		});
 	});
 
-	$scope.create= function() {
-		$scope.loading = true;
-		if ($scope.formData.text != undefined) {
-			User.create($scope.formData).success(function(data) {
-				$scope.loading = false;
-				$scope.formData = {};
-				$scope.todos = data;
-			});
-		}
-	};
-
 	$scope.delete = function(id, index) {
 		User.delete(id).success(function(data) {
 			$scope.users.splice(index, 1);
 		});
 	};
 
-});
+}).controller('cadUserController', function($scope, $window, User) {
+
+	angular.extend($scope, {
+		user: {
+			name: []
+		}
+	});
+
+	$scope.salvarUser = function() {
+		User.create($scope.user).success(function(data) {
+			if(data.result){
+				$window.location.href = "#ConUser";
+			}else{
+				$window.location.href = "#Home";
+			}
+		});
+	};
+
+});;
