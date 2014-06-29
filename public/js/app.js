@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['userApp', 'userService', 'ngRoute'])
+angular.module('app', ['conUserApp', 'cadUserApp', 'userService', 'ngRoute'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
       when('/Home', {
