@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userService', []).factory('User', function($http) {
+angular.module('userApp').factory('User', function($http) {
 	return {
 		getAll : function() {
 			return $http.get('/user');

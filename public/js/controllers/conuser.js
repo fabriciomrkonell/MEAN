@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('conUserApp', []).controller('conUserController', function($scope, User) {
+angular.module('userApp').controller('conUserController', function($scope, User) {
 
 	angular.extend($scope, {
 		users: []

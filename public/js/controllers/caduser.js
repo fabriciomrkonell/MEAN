@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cadUserApp', []).controller('cadUserController', function($scope, $window, User, $routeParams) {
+angular.module('userApp').controller('cadUserController', function($scope, $window, User, $routeParams) {
 
 	if($routeParams._id){
 		User.getById($routeParams._id).success(function(data) {
